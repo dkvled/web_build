@@ -1,10 +1,11 @@
 import Login from "./Login";
 import Signup from "./Signup";
+import PasswordChange from "./PasswordChange";
 
 function App() {
   return (
     <div >
-      <Signup />
+      <Login />
     </div>
   );
 }
