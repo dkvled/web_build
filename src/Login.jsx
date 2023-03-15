@@ -93,6 +93,7 @@ export default function Login() {
                   <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
               )}
             </div>
+            <div className="passwordChange">비밀번호 변경</div>
           </div>
 
           <div>
