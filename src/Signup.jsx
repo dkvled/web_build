@@ -9,14 +9,11 @@ export default function Signup() {
   const [tel, setTel] = useState('');
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState('');
-  const [confirm, setConfirm] = useState('');
 
-  const [nameValid, setNameValid] = useState(false);
   const [birthValid, setBirthValid] = useState(false);
   const [telValid, setTelValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
-  const [confirmValid, setConfirmValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
 
   const handleName = (e) => {
@@ -59,7 +56,7 @@ export default function Signup() {
 
   const handlePw = (e) => {
     setPw(e.target.value);
-    const regex = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,20}$/; //비밀번호 정규 표현식
+    const regex =  /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
     if(regex.test(pw)) {
       setPwValid(true);
     } else{
@@ -67,22 +64,13 @@ export default function Signup() {
     }
   }
 
-  const handleConfirm = (e) => {
-    setConfirm(e.target.value);
-    if(pw === confirm) {
-      setConfirmValid(true);
-    } else{
-      setConfirmValid(false);
-    }
-  }
-  
   useEffect(() => {
-    if(birthValid && telValid && emailValid && pwValid && confirmValid) {
+    if(birthValid && telValid && emailValid && pwValid) {
       setNotAllow(false);
       return;
     }
     setNotAllow(true);
-  },[birthValid, telValid, emailValid, pwValid, confirmValid]);
+  },[birthValid, telValid, emailValid, pwValid]);
 
   return(
     <div className="page">
@@ -111,12 +99,6 @@ export default function Signup() {
            value={birth}
            onChange={handleBirth} />
         </div>
-        <div className="errorMessageWrap">
-          {
-            !birthValid && birth.length > 0 && (
-              <div>생년월일을 8자리 숫자로 입력해주세요.</div>
-            )}
-        </div>
 
         <div style={{marginTop: "20px"}} className="inputTitle">전화번호</div>
         <div className="inputWrap">
@@ -126,11 +108,6 @@ export default function Signup() {
            placeholder='ex: 01012345678'
            value={tel}
            onChange={handleTel} />
-        </div>
-        <div className="errorMessageWrap">
-              {!telValid && tel.length > 0 && (
-                  <div>-를 사용하지 않고 올바른 전화번호 형식으로 입력해주세요.</div>
-                )}
         </div>
 
         <div style={{marginTop: "20px"}} className="inputTitle">이메일</div>
@@ -142,40 +119,17 @@ export default function Signup() {
            value={email}
            onChange={handleEmail} />
         </div>
-        <div className="errorMessageWrap">
-              {!emailValid && email.length > 0 && (
-                  <div>올바른 이메일을 입력해주세요.</div>
-                )}
-        </div>
 
         <div style={{marginTop: "20px"}} className="inputTitle">비밀번호</div>
         <div className="inputWrap">
           <input
            type='password'
            className="input"
-           placeholder="영문, 숫자, 특수문자 포함 8자 이상"
+           placeholder="9자 이상 입력"
            value={pw}
            onChange={handlePw} />
         </div>
-        <div className="errorMessageWrap">
-              {!pwValid && pw.length > 0 && (
-                  <div>영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
-              )}
-        </div>
-
-        <div style={{marginTop: "20px"}} className="inputTitle">비밀번호 확인</div>
-        <div className="inputWrap">
-          <input
-           type='password'
-           className="input"
-           value={confirm}
-           onChange={handleConfirm} />
-        </div>
-        <div className="errorMessageWrap">
-              {!confirmValid && confirm.length > 0 && (
-                  <div>비밀번호가 일치하지 않습니다.</div>
-              )}
-        </div>
+        
       </div>
       <div>
         <button disabled={notAllow} className="bottomButton"> 
