@@ -63,12 +63,15 @@ export default function Login() {
           <div className="contentWrap">
             <div className="inputTitle">이메일 주소</div>
             <div className="inputWrap">
-              <input 
-                type='text'
-                className="input"
-                placeholder="text@gmail.com"
-                value={email}  //사용자가 입력한 이메일 주소 값
-                onChange={handleEmail} />
+              <form>
+                <input 
+                  type='text'
+                  name='email'
+                  className="input"
+                  placeholder="text@gmail.com"
+                  value={email}  //사용자가 입력한 이메일 주소 값
+                  onChange={handleEmail} />
+              </form>
             </div>
             <div className="errorMessageWrap">
               {!emailValid && email.length > 0 && (
@@ -80,13 +83,16 @@ export default function Login() {
               비밀번호
               </div>
             <div className="inputWrap">
-              <input 
-                 type='password'
-                 className="input"
-                 placeholder="영문, 숫자, 특수문자 포함 8자 이상"
-                 value={pw}   //사용자가 입력한 패스워드 값
-                 onChange={handlePassword}
-                 />
+              <form>
+                <input 
+                  type='password'
+                  name='pw'
+                  className="input"
+                  placeholder="영문, 숫자, 특수문자 포함 8자 이상"
+                  value={pw}   //사용자가 입력한 패스워드 값
+                  onChange={handlePassword}
+                  />
+              </form>
             </div>
             <div className="errorMessageWrap">
               {!pwValid && pw.length > 0 && (
