@@ -82,52 +82,67 @@ export default function Signup() {
 
         <div className="inputTitle">이름</div>
         <div className="inputWrap">
-          <input 
-           type='text'
-           className="input"
-           maxLength='20'
-           value={name}
-           onChange={handleName} />
+          <form>
+            <input 
+            type='text'
+            name='name'
+            className="input"
+            maxLength='20'
+            value={name}
+            onChange={handleName} />
+          </form>
         </div>
 
         <div style={{marginTop: "32px"}} className="inputTitle">생년월일</div>
         <div className="inputWrap">
-          <input
-           type='text'
-           className="input"
-           placeholder="ex: 20030717"
-           value={birth}
-           onChange={handleBirth} />
+          <form>
+            <input
+            type='text'
+            name='birth'
+            className="input"
+            placeholder="ex: 20030717"
+            value={birth}
+            onChange={handleBirth} />
+          </form>
         </div>
 
         <div style={{marginTop: "20px"}} className="inputTitle">전화번호</div>
         <div className="inputWrap">
-          <input
-           type='text'
-           className="input"
-           placeholder='ex: 01012345678'
-           value={tel}
-           onChange={handleTel} />
+          <form>
+            <input
+            type='text'
+            name='tel'
+            className="input"
+            placeholder='ex: 01012345678'
+            value={tel}
+            onChange={handleTel} />
+          </form>
         </div>
 
         <div style={{marginTop: "20px"}} className="inputTitle">이메일</div>
         <div className="inputWrap">
-          <input
-           type='text'
-           className="input"
-           placeholder="text@gmail.com"
-           value={email}
-           onChange={handleEmail} />
+          <form>
+            <input
+            type='text'
+            name='email'
+            className="input"
+            placeholder="text@gmail.com"
+            value={email}
+            onChange={handleEmail} />
+          </form>
         </div>
 
         <div style={{marginTop: "20px"}} className="inputTitle">비밀번호</div>
         <div className="inputWrap">
-          <input
-           type='password'
-           className="input"
-           placeholder="9자 이상 입력"
-           value={pw}
-           onChange={handlePw} />
+          <form>
+            <input
+            type='password'
+            name='pw'
+            className="input"
+            placeholder="9자 이상 입력"
+            value={pw}
+            onChange={handlePw} />
+          </form>
         </div>
         
       </div>
