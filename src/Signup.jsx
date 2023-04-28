@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
 import {useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
 
@@ -148,7 +149,7 @@ export default function Signup() {
       </div>
       <div>
         <button disabled={notAllow} className="bottomButton"> 
-          회원가입 하기
+          <Link to="/">회원가입 하기</Link>          
         </button>
       </div>
    </div>
