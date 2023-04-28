@@ -1,11 +1,15 @@
 import React from 'react';
 import './index.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className="header">
-      <button>로그인</button>
-      <button>회원가입</button>
+      <div className="logo">
+        <h2>웹 메이커스</h2>
+      </div>
+      <Link to="/login">로그인</Link>
+      <Link to="/signup">회원가입</Link>
     </div>
   );
 };
