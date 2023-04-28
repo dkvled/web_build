@@ -2,6 +2,8 @@ import React from 'react'
 import {useState} from 'react';
 import {useEffect} from 'react';
 
+import { Link } from 'react-router-dom';
+
 const User = {
   email: 'test@example.com',
   pw: 'test2323@@@'  
@@ -104,8 +106,8 @@ export default function Login() {
 
           <div>
             <button onClick={onClickConfirmButtton} disabled={notAllow} className="bottomButton">
-              확인
-            </button>
+                <Link to="/">확인</Link>
+              </button>
           </div>
         </div>
     );
