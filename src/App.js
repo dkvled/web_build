@@ -16,7 +16,6 @@ function App() {
     <Router>
       <div >
         <Header/>
-        
         <Switch>
           <Route exact path="/">
             <PostFilter/>
