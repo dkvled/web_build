@@ -1,5 +1,6 @@
 import Login from "./Login";
 import Signup from "./Signup";
+import Profile from "./Profile";
 
 import Header from './Header'; //밑에 3개 같이 사용
 import PostFilter from './PostFilter';
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <div >
         <Header/>
+        
         <Switch>
           <Route exact path="/">
             <PostFilter/>
@@ -24,7 +26,10 @@ function App() {
           </Route>
           <Route exact path="/signup">
             <Signup/>
-          </Route>            
+          </Route>  
+          <Route exact path="/profile">
+            <Profile/>
+          </Route>        
         </Switch>
       </div>
     </Router>
